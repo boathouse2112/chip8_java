@@ -20,8 +20,11 @@ public final class Instruction {
         this.opcodePattern = opcodePattern;
     }
 
-    public boolean match(int instructionBytes) {
-        String opcodeRegex = this.opcodePattern.replaceAll("[xynXYN]", ".");
-        return Pattern.matches(opcodeRegex, Integer.toHexString(instructionBytes));
+    /**
+     * @param instructionData u16
+     */
+    public boolean match(int instructionData) {
+        var opcodeRegex = this.opcodePattern.replaceAll("[xynXYN]", ".");
+        return Pattern.matches(opcodeRegex, Integer.toHexString(instructionData));
     }
 }

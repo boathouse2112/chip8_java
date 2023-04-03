@@ -26,7 +26,7 @@ public class Chip8Graphics {
 
     static class GraphicsPane extends JComponent {
 
-        Console console;
+        private Console console;
 
         public GraphicsPane(Console console) {
             this.console = console;
